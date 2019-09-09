@@ -2,6 +2,7 @@ package com.versilistyson.module1week6_assignment.adapter
 
 import android.graphics.BitmapFactory
 import android.graphics.Color
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -37,6 +38,6 @@ class ShoppingItemRecyclerViewAdapter(var items: List<ShoppingItem>): RecyclerVi
         holder.cardViewConstraintLayout.setBackgroundColor(Color.parseColor(items[position].color))
         holder.shoppingItemNameTextView.text = items[position].getDisplayName()
         holder.shoppingItemPriceTextView.text = items[position].getPrice()
-        holder.shoppingItemImageView.setImageBitmap(BitmapFactory.decodeFile(items[position].imageFileName))
+        holder.shoppingItemImageView.setImageResource(items[position].imageFileName)
     }
 }

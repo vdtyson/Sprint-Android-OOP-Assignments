@@ -3,8 +3,9 @@ package com.versilistyson.module1week6_assignment.model
 import android.graphics.Bitmap
 import android.graphics.Color
 import android.graphics.drawable.Drawable
+import android.net.Uri
 
-open class ShoppingItem(var color: String,var productName: String, var price: Int, var imageFileName: String) {
+open class ShoppingItem(var color: String,var productName: String, var price: Int, var imageFileName: Int) {
     open fun getDisplayName(): String {
         return productName
     }
@@ -18,7 +19,7 @@ class ClothingShoppingItem(
     color: String = "#EDD9A3",
     productName: String,
     price: Int,
-    imageFileName: String,
+    imageFileName: Int,
     val clothingType: ClothingType
 
 ): ShoppingItem(color,productName, price, imageFileName) {
@@ -40,7 +41,7 @@ class GroceryShoppingItem(
     color: String = "#E2E8CO",
     productName: String,
     price: Int,
-    imageFileName: String,
+    imageFileName: Int,
     val groceryType: GroceryType
 ): ShoppingItem(color, productName, price, imageFileName) {
 
@@ -61,7 +62,7 @@ class BoardGameShoppingItem(
     color: String = "#887F86",
     productName: String,
     price: Int,
-    imageFileName: String,
+    imageFileName: Int,
     val boardGameType:BoardGameType
 ) : ShoppingItem(color, productName, price, imageFileName) {
 
