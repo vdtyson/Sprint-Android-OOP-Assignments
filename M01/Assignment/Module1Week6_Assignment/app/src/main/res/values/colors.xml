@@ -3,4 +3,7 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+    <color name="groceryShoppingItemColor">#BB6C64</color>
+    <color name="clothingShoppingItemColor">#594294</color>
+    <color name="boardGameShoppingItemColor">#8BC34A</color>
 </resources>

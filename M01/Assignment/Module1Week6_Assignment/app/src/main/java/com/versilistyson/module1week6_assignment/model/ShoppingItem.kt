@@ -4,19 +4,20 @@ import android.graphics.Bitmap
 import android.graphics.Color
 import android.graphics.drawable.Drawable
 import android.net.Uri
+import com.versilistyson.module1week6_assignment.R
 
-open class ShoppingItem(var color: String,var productName: String, var price: Int, var imageFileName: Int) {
+open class ShoppingItem(var color: Int,var productName: String, var price: Int, var imageFileName: Int) {
     open fun getDisplayName(): String {
         return productName
     }
     fun getPrice(): String {
-        val priceDisplayed = price.toString()
+        val priceDisplayed = "$$price"
         return priceDisplayed
     }
 }
 
 class ClothingShoppingItem(
-    color: String = "#EDD9A3",
+    color: Int = R.color.clothingShoppingItemColor,
     productName: String,
     price: Int,
     imageFileName: Int,
@@ -38,7 +39,7 @@ class ClothingShoppingItem(
 }
 
 class GroceryShoppingItem(
-    color: String = "#E2E8CO",
+    color: Int = R.color.groceryShoppingItemColor,
     productName: String,
     price: Int,
     imageFileName: Int,
@@ -59,7 +60,7 @@ class GroceryShoppingItem(
 }
 
 class BoardGameShoppingItem(
-    color: String = "#887F86",
+    color: Int = R.color.boardGameShoppingItemColor,
     productName: String,
     price: Int,
     imageFileName: Int,
@@ -74,6 +75,6 @@ class BoardGameShoppingItem(
 
     override fun getDisplayName(): String {
         val boardGameDisplayName = "$boardGameType: $productName"
-        return productName
+        return boardGameDisplayName
     }
 }
