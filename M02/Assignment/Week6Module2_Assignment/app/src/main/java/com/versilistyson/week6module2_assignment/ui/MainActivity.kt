@@ -7,14 +7,14 @@ import com.versilistyson.week6module2_assignment.model.*
 
 class MainActivity : AppCompatActivity() {
 
-    val vehicleList = listOf<Vehicle>(
-        Scooter(),
-        Airplane(),
-        UFO(),
-        Scooter(),
-        Porsche(),
-        WaveRunner(),
-        SailBoat()
+    val vehicleList = listOf<String>(
+        Scooter().travel(),
+        Airplane().travel(),
+        UFO().travel(),
+        Scooter().travel(),
+        Porsche().travel(),
+        WaveRunner().travel(),
+        SailBoat().travel()
     )
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

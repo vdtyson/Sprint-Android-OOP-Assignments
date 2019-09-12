@@ -5,67 +5,70 @@ import com.versilistyson.week6module2_assignment.`interface`.AirTravel
 import com.versilistyson.week6module2_assignment.`interface`.GroundTravel
 import com.versilistyson.week6module2_assignment.`interface`.WaterTravel
 
-abstract class Vehicle {
+abstract class Vehicle(val id: String, val weight: Int, var favorite: Boolean) {
 
-    abstract fun travel()
+    abstract fun travel() : String
 }
 
- class Airplane: Vehicle(), AirTravel {
-    override fun travel() {
-        fly()
+ class Airplane(id: String, weight: Int, favorite: Boolean) : Vehicle(id, weight, favorite), AirTravel {
+     val name = "airplane"
+     override fun travel() : String {
+        return "An airplane flies with ${fly()}"
     }
 
-    override fun fly() {
-        Log.i("Airplane", "Flies with Wings")
-    }
-
-}
- class UFO: Vehicle(), AirTravel {
-    override fun fly() {
-        Log.i("UFO", "The UFO Flies with ???")
-    }
-
-    override fun travel() {
-        fly()
+    override fun fly() : String {
+        val planeFliesWith = "wings"
+        return planeFliesWith
     }
 
 }
- class Scooter: Vehicle(), GroundTravel {
-    override fun drive() {
-        Log.i("Scooter", "Can we consider this a vehicle?")
+ class UFO(id: String, weight: Int, favorite: Boolean) : Vehicle(id, weight, favorite), AirTravel {
+     val name = "UFO"
+    override fun fly() : String {
+        return "A $name flies with ${fly()}"
     }
 
-    override fun travel() {
-        drive()
-    }
-
-}
- class Porsche: Vehicle(), GroundTravel {
-    override fun drive() {
-        Log.i("Porsche", "Drives on 4 wheels")
-    }
-
-    override fun travel() {
-        drive()
+    override fun travel(): String {
+        return fly()
     }
 
 }
- class WaveRunner: Vehicle(), WaterTravel {
-    override fun sail() {
-        Log.i("WaveRunner", "Rides through use of impeller and driveshaft")
+ class Scooter(id: String, weight: Int, favorite: Boolean) : Vehicle(id, weight, favorite), GroundTravel {
+    override fun drive(): String {
+        return "Can we consider this a vehicle?"
     }
 
-    override fun travel() {
-        sail()
+    override fun travel(): String {
+        return drive()
+    }
+
+}
+ class Porsche(id: String, weight: Int, favorite: Boolean) : Vehicle(id, weight, favorite), GroundTravel {
+    override fun drive() : String {
+       return  "A porsche drives on four wheels"
+    }
+
+    override fun travel() : String {
+        return drive()
+    }
+
+}
+ class WaveRunner(id: String, weight: Int, favorite: Boolean) : Vehicle(id, weight, favorite), WaterTravel {
+    override fun sail(): String {
+        return "A wave runner has an impeller"
+    }
+
+    override fun travel(): String {
+        return sail()
     }
 }
- class SailBoat: Vehicle(), WaterTravel {
-    override fun sail() {
-        Log.i("SailBoat", "Uses sails. Who would've though?")
+ class SailBoat(id: String, weight: Int, favorite: Boolean) : Vehicle(id, weight, favorite), WaterTravel {
+    override fun sail(): String {
+       return "A sail uses sails. Who would've thought"
     }
 
-    override fun travel() {
-        sail()
+    override fun travel(): String {
+        return sail()
     }
 
 }
